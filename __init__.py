@@ -3,7 +3,6 @@ from datetime import date, datetime, timedelta
 import wikipedia, random, math, holidays
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = "1-2/3/0-5Aa"
 app.config['SERVER NAME'] = 'hmanyds.com'
 
 
@@ -740,7 +739,6 @@ def page_not_found(e):
 @app.route('/sitemap.xml', methods=['GET'])
 def sitemap():
     try:
-        """Generate sitemap.xml. Makes a list of urls and date modified."""
         pages = []
         ten_days_ago = (datetime.now() - timedelta(days=7)).date().isoformat()
         # static pages
